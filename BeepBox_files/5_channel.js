@@ -5708,7 +5708,7 @@ var beepbox;
             this._drumChannelStepper = input({ style: "width: 3em; margin-left: 1em;", type: "number", step: "1" });
             this._okayButton = button({ style: "width:45%;" }, [text("Okay")]);
             this._cancelButton = button({ style: "width:45%;" }, [text("Cancel")]);
-            this.container = div({ className: "prompt", style: "width: 250px;" }, [
+			this.container = div({ className: "prompt", style: "width: 250px;" }, [
                 div({ style: "font-size: 2em" }, [text("Custom Song Size")]),
                 div({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" }, [
                     div({ style: "text-align: right;" }, [
@@ -6596,7 +6596,13 @@ var beepbox;
 			this._riffSlider = input({ style: "width: 9em; margin: 0px;", type: "range", min: "0", max: "10", value: "0", step: "1" });
 			this._driveSlider = input({ style: "width: 9em; margin: 0px;", type: "range", min: "0", max: "23", value: "0", step: "0.5" });
             this._advancedInstrumentSettingsLabel = div({ style: "margin: 3px 0; text-align: center;" }, [text("Advanced Instrument Settings")]);
-			
+			this._cleanButton = button({ style: "margin: 5px 0;", type: "button" }, [text("New Song")]);
+			this._backwardButton = button({ style: "width:45%;", type: "button" }, [text("l<< ")]);
+			this._forwardButton = button({ style: "width:45%;", type: "button" }, [text(">>l")]);
+			this._undoButton = button({ style: "width:45%;", type: "button" }, [text("<~")]);
+			this._redoButton = button({ style: "width:45%;", type: "button" }, [text("~>")]);
+			this._customizeButton = button({ style: "margin: 5px 0;", type: "button" }, [text("Customize Song Size")]);
+		
 			this._partDropDown = buildOptions(select({ style: "width:9em;" }), beepbox.Config.partNames);
             this._patternSettingsLabel = div({ style: "visibility: hidden; margin: 3px 0; text-align: center;" }, [text("Pattern Settings")]);
             this._instrumentDropDown = select({ style: "width:9em;" });
@@ -6642,7 +6648,7 @@ var beepbox;
             this.mainLayer = div({ className: "beepboxEditor", tabIndex: "0" }, [
                 this._editorBox,
                 div({ className: "editor-right-side" }, [
-                    div({ style: "text-align: center; color: ;" }, [text("ModBox Snapshot 3.0.0-B")]),
+                    div({ style: "text-align: center; color: ;" }, [text("ModBox Snapshot 3.0.0-C")]),
                     div({ style: "margin: 5px 0; display: flex; flex-direction: row; align-items: center;" }, [
                         this._playButton,
                         div({ style: "width: 1px; height: 10px;" }),
@@ -6696,7 +6702,15 @@ var beepbox;
                 ]),
 				this._advacnedSettingsContainer = div({ className: "editor-right-most-side", style: "margin: 0px 5px;"}, [
                     div({ style: "text-align: center; color: ;" }, [text("Advanced Settings")]),
-					div({ style: "width: 182px; height: 163px;" }),
+					this._cleanButton,
+					this._customizeButton,
+					div({ style: "margin: 5px 0; display: flex; flex-direction: row; justify-content: space-between;" }, [
+                    this._backwardButton,
+					this._undoButton,
+					this._redoButton,
+					this._forwardButton,
+					]),
+					div({ style: "width: 182px; height: 54px;" }),
 					div({ style: "text-align: center; color: ;" }, [text("Advanced Song Settings")]),
 					div({ className: "selectRow" }, [span({}, [text("Blending: ")]), this._blendSlider]),
 					div({ className: "selectRow" }, [span({}, [text("Riff: ")]), this._riffSlider]),
@@ -6868,6 +6882,24 @@ var beepbox;
             this._openExportPrompt = function () {
                 _this._openPrompt("export");
             };
+			this._shiftForward = function () {
+                _this._doc.synth.nextBar();
+            };
+			this._shiftBackward = function () {
+                _this._doc.synth.prevBar();
+            };
+			this._advancedUndo = function () {
+                _this._doc.undo();
+            };
+			this._advancedRedo = function () {
+                _this._doc.redo();
+            };
+			this._customize = function () {
+                _this._openPrompt("duration");
+            };
+			this._cleanEverything = function () {
+                _this._cleanSlate();
+            };
 			this._whenSetASettings = function () {
                 _this._doc.history.record(new beepbox.ChangeASettings(_this._doc, _this._aSettingsDropDown.selectedIndex));
             };
@@ -7030,6 +7062,12 @@ var beepbox;
             this._effectDropDown.addEventListener("change", this._whenSetEffect);
             this._playButton.addEventListener("click", this._togglePlay);
             this._exportButton.addEventListener("click", this._openExportPrompt);
+			this._cleanButton.addEventListener("click", this._cleanEverything);
+			this._forwardButton.addEventListener("click", this._shiftForward);
+			this._backwardButton.addEventListener("click", this._shiftBackward);
+			this._undoButton.addEventListener("click", this._advancedUndo);
+			this._redoButton.addEventListener("click", this._advancedRedo);
+			this._customizeButton.addEventListener("click", this._customize);
             this._volumeSlider.addEventListener("input", this._setVolumeSlider);
             this._editorBox.addEventListener("mousedown", this._refocusStage);
             this.mainLayer.addEventListener("keydown", this._whenKeyPressed);
