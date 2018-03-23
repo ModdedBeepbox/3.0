@@ -6648,7 +6648,7 @@ var beepbox;
             this.mainLayer = div({ className: "beepboxEditor", tabIndex: "0" }, [
                 this._editorBox,
                 div({ className: "editor-right-side" }, [
-                    div({ style: "text-align: center; color: ;" }, [text("ModBox Snapshot 3.0.0-C")]),
+                    div({ style: "text-align: center; color: ;" }, [text("ModBox Snapshot 3.0.0-D")]),
                     div({ style: "margin: 5px 0; display: flex; flex-direction: row; align-items: center;" }, [
                         this._playButton,
                         div({ style: "width: 1px; height: 10px;" }),
