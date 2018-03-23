@@ -6856,6 +6856,10 @@ var beepbox;
                         _this._doc.synth.nextBar();
                         event.preventDefault();
                         break;
+                    case 81:
+                        _this._openPrompt("duration");
+                        event.preventDefault();
+                        break;
                     case 189:
                     case 173:
                         _this._transpose(false);
