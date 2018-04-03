@@ -1510,10 +1510,10 @@ var beepbox;
                             this.instrumentWaves[channel][i] = Config.drumNames.indexOf(instrumentObject.wave);
                             if (this.instrumentWaves[channel][i] == -1)
                                 this.instrumentWaves[channel][i] = 1;
-                            this.instrumentFilters[channel][i] = filterNames.indexOf(instrumentObject.filter);
+                            this.instrumentFilters[channel][i] = Config.filterNames.indexOf(instrumentObject.filter);
                             if (this.instrumentFilters[channel][i] == -1)
                                 this.instrumentFilters[channel][i] = 1;
-                            this.instrumentHarm[channel][i] = harmNames.indexOf(instrumentObject.harm);
+                            this.instrumentHarm[channel][i] = Config.harmNames.indexOf(instrumentObject.harm);
                             if (this.instrumentHarm[channel][i] == -1)
                                 this.instrumentHarm[channel][i] = 1;
                             this.instrumentChorus[channel][i] = 0;
@@ -6513,6 +6513,7 @@ var beepbox;
     beepbox.ExportPrompt = ExportPrompt;
 })(beepbox || (beepbox = {}));
 var beepbox;
+
 (function (beepbox) {
     var button = beepbox.html.button, div = beepbox.html.div, input = beepbox.html.input, text = beepbox.html.text;
     var ImportPrompt = (function () {
