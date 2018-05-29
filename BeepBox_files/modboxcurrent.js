@@ -2806,7 +2806,7 @@ var beepbox;
                         settingsVolumeMult = 0.27 * 0.5 * Config.waveVolumes[instrument.wave] * Config.filterVolumes[instrument.filter] * Config.chorusVolumes[instrument.chorus];
                     }
                     else {
-                        settingsVolumeMult = 0.19 * Config.drumVolumes[instrument.wave];
+                        settingsVolumeMult = 0.09 * Config.drumVolumes[instrument.wave];
                     }
                     if (resetPhases && !isDrum) {
                         synthChannel.reset();
