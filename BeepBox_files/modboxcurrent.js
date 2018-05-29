@@ -7727,7 +7727,7 @@ var beepbox;
             this._playButton = button({ style: "width: 80px;", type: "button" });
             this._prevBarButton = button({ className: "prevBarButton", style: "width:45%; margin: 0px; margin-top: -2px;", type: "button", title: "Prev Bar (left bracket)" });
             this._nextBarButton = button({ className: "nextBarButton", style: "width:45%; margin: 0px; margin-top: -2px;", type: "button", title: "Next Bar (right bracket)" });
-            this._volumeSlider = input({ title: "main volume", style: "width: 5em; flex-grow: 1; margin: 0px;", type: "range", min: "0", max: "150", value: "50", step: "1" });
+            this._volumeSlider = input({ title: "main volume", style: "width: 5em; flex-grow: 1; margin: 0px;", type: "range", min: "0", max: "100", value: "50", step: "1" });
             this._editMenu = select({ style: "width: 100%;" }, [
                 option("", "Edit Menu", true, true),
                 option("undo", "Undo (Z)", false, false),
