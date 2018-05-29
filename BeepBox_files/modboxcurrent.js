@@ -964,7 +964,7 @@ var beepbox;
 							buffer.push(66, base64IntToCharCode[instrument.octoff]);
                             buffer.push(65, base64IntToCharCode[instrument.algorithm]);
                             buffer.push(70, base64IntToCharCode[instrument.feedbackType]);
-                            buffer.push(96, base64IntToCharCode[instrument.feedbackAmplitude]);
+                            buffer.push(95, base64IntToCharCode[instrument.feedbackAmplitude]);
                             buffer.push(86, base64IntToCharCode[instrument.feedbackEnvelope]);
                             buffer.push(81);
                             for (var o = 0; o < Config.operatorCount; o++) {
@@ -1454,7 +1454,7 @@ var beepbox;
                 else if (command == 70) {
                     this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].feedbackType = Song._clip(0, Config.operatorFeedbackNames.length, base64CharCodeToInt[compressed.charCodeAt(charIndex++)]);
                 }
-                else if (command == 96) {
+                else if (command == 95) {
                     this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].feedbackAmplitude = Song._clip(0, Config.operatorAmplitudeMax + 1, base64CharCodeToInt[compressed.charCodeAt(charIndex++)]);
                 }
                 else if (command == 86) {
@@ -7738,6 +7738,7 @@ var beepbox;
                 option("transposeDown", "Shift Notes Down (-)", false, false),
                 option("duration", "Custom song size...", false, false),
                 option("import", "Import JSON...", false, false),
+		option("cleanS", "Clean Slate", false, false),
             ]);
             this._optionsMenu = select({ style: "width: 100%;" }, [
                 option("", "Preferences Menu", true, true),
@@ -8298,6 +8299,9 @@ var beepbox;
                         break;
                     case "import":
                         _this._openPrompt("import");
+                        break;
+		    case "cleanS":
+                        _this._whenNewSongPressed();
                         break;
                     case "duration":
                         _this._openPrompt("duration");
