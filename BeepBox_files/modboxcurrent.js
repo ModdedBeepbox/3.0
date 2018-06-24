@@ -938,7 +938,7 @@ var beepbox;
             buffer.push(121, base64IntToCharCode[this.riff]);
             buffer.push(124, base64IntToCharCode[this.drive]);
             buffer.push(68, base64IntToCharCode[this.csign]);
-			buffer.push(127, base64IntToCharCode[this.detune]);
+			buffer.push(72, base64IntToCharCode[this.detune]);
             buffer.push(97, base64IntToCharCode[this.beatsPerBar - 1]);
             buffer.push(103, base64IntToCharCode[(this.barCount - 1) >> 6], base64IntToCharCode[(this.barCount - 1) & 0x3f]);
             buffer.push(106, base64IntToCharCode[this.patternsPerChannel - 1]);
@@ -1241,7 +1241,7 @@ var beepbox;
                     this.csign = base64CharCodeToInt[compressed.charCodeAt(charIndex++)];
                     this.csign = Song._clip(0, Config.csignRange, this.csign);
                 }    					
-                else if (command == 127) {
+                else if (command == 72) {
                     this.detune = base64CharCodeToInt[compressed.charCodeAt(charIndex++)];
                     this.detune = Song._clip(0, Config.detuneRange, this.detune);
                 }    				
