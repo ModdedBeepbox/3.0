@@ -305,7 +305,7 @@ var beepbox;
 	channelSixDimColorPallet =      ["#492184"]
 	channelSevenDimColorPallet =    ["#991010"]
 	channelEightDimColorPallet =    ["#aaaaaa"]
-	channelNineDimColorPallet =     ["#5869BD"]
+	channelNineDimColorPallet =    ["#5869BD"]
 	
     Config.keyNames = ["B", "A♯", "A", "G♯", "G", "F♯", "F", "E", "D♯", "D", "C♯", "C"];
     Config.keyTransposes = [23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12];
