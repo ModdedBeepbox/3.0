@@ -7889,7 +7889,7 @@ var beepbox;
             this.mainLayer = div({ className: "beepboxEditor", tabIndex: "0" }, [
             this._editorBox,
             div({ className: "editor-widget-column" }, [
-				div({ style: "text-align: center; color: ;" }, [text("ModBox 3.0.1")]),
+				div({ style: "text-align: center; color: ;" }, [text("ModBox 3.0.2")]),
                 div({ style: "margin: 5px 0; display: flex; flex-direction: row; align-items: center;" }, [
                     this._playButton,
                     div({ style: "width: 1px; height: 10px;" }),
