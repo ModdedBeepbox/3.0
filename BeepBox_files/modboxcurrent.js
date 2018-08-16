@@ -7540,7 +7540,7 @@ var beepbox;
                 }
                 arrayBuffer = ArrayBuffer.transfer(arrayBuffer, fileSize);
                 var blob = new Blob([arrayBuffer], { type: "audio/midi" });
-                save(blob, _this._fileName.value.trim() + ".midi");
+                save(blob, _this._fileName.value.trim() + ".mid");
                 _this._close();
             };
             this._whenExportToJson = function () {
