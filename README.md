@@ -1,4 +1,4 @@
-<a href=https://moddedbeepbox.github.io/beta/>ModdedBeepbox</a>
+<a href=https://moddedbeepbox.github.io/3.0/>ModdedBeepbox</a>
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/ModdedBeepbox/3.0/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
