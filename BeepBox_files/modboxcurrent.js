@@ -547,7 +547,7 @@ var beepbox;
     ];
     Config.pitchChannelTypeNames =    ["chip", "FM (expert)"];
 	Config.drumChannelTypeNames =     ["noise"]
-    Config.instrumentTypeNames =      ["chip", "FM", "noise", "cs"];
+    Config.instrumentTypeNames =      ["chip", "FM", "noise"];
     Config.pitchChannelColorsDim =    [channelOneDimColorPallet, channelTwoDimColorPallet, channelThreeDimColorPallet, channelFourDimColorPallet, channelFiveDimColorPallet, channelSixDimColorPallet, channelSevenDimColorPallet, channelEightDimColorPallet, channelNineDimColorPallet, channelTenDimColorPallet, channelElevenDimColorPallet, channelTwelveDimColorPallet];
     Config.pitchChannelColorsBright = [channelOneBrightColorPallet, channelTwoBrightColorPallet, channelThreeBrightColorPallet, channelFourBrightColorPallet, channelFiveBrightColorPallet, channelSixBrightColorPallet, channelSevenBrightColorPallet, channelEightBrightColorPallet, channelNineBrightColorPallet, channelTenBrightColorPallet, channelElevenBrightColorPallet, channelTwelveBrightColorPallet];
     Config.pitchNoteColorsDim =       [channelOneDimColorPallet, channelTwoDimColorPallet, channelThreeDimColorPallet, channelFourDimColorPallet, channelFiveDimColorPallet, channelSixDimColorPallet, channelSevenDimColorPallet, channelEightDimColorPallet, channelNineDimColorPallet, channelTenDimColorPallet, channelElevenDimColorPallet, channelTwelveDimColorPallet];
