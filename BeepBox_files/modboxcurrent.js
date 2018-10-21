@@ -7759,7 +7759,7 @@ var beepbox;
                                     var description = "";
                                     var instrumentProgram = 0x51;
                                     if (isDrums) {
-                                        description += "type: " + beepbox.Config.instrumentTypeNames[instrument.type];
+                                        description += "type: " + beepbox.Config.instrumentTypeNames[2];
                                         description += ", noise: " + beepbox.Config.drumNames[instrument.wave];
                                         description += ", volume: " + beepbox.Config.volumeNames[instrument.volume];
                                         description += ", transition: " + beepbox.Config.transitionNames[instrument.transition];
