@@ -1125,6 +1125,7 @@ var beepbox;
                         }
                     }
                     else {
+			buffer.push(84, base64IntToCharCode[instrument.type]);
                         buffer.push(119, base64IntToCharCode[instrument.wave]);
                         buffer.push(100, base64IntToCharCode[instrument.transition]);
                         buffer.push(118, base64IntToCharCode[instrument.volume]);
@@ -1839,7 +1840,6 @@ var beepbox;
                     var instrument = this.channels[channel].instruments[i];
                     if (isDrum) {
                         instrumentArray.push({
-                            type: Config.instrumentTypeNames[instrument.type],
                             volume: (5 - instrument.volume) * 20,
 							imute: Config.imuteNames[instrument.imute],
                             wave: Config.drumNames[instrument.wave],
@@ -2107,9 +2107,6 @@ var beepbox;
                             else {
                                 instrument.volume = 0;
                             }
-                            instrument.type = Config.instrumentTypeNames.indexOf(instrumentObject.type);
-                            if (instrument.type != 0)
-                                instrument.type = 0;
                             instrument.wave = Config.drumNames.indexOf(instrumentObject.wave);
                             if (instrument.wave == -1)
                                 instrument.wave = 1;
