@@ -1125,6 +1125,7 @@ var beepbox;
                         }
                     }
                     else {
+			    buffer.push(84, base64IntToCharCode[2]);
                         buffer.push(119, base64IntToCharCode[instrument.wave]);
                         buffer.push(100, base64IntToCharCode[instrument.transition]);
                         buffer.push(118, base64IntToCharCode[instrument.volume]);
