@@ -8746,7 +8746,7 @@ var beepbox;
                     }
                 }
                 setSelectedIndex(_this._instrumentTypeSelect, instrument.type);
-				setSelectedIndex(_this._drumTypeSelect, instrument.type);
+				setSelectedIndex(_this._drumTypeSelect, 0);
                 setSelectedIndex(_this._algorithmSelect, instrument.algorithm);
                 _this._instrumentSelectRow.style.display = (_this._doc.song.instrumentsPerChannel > 1) ? "" : "none";
                 _this._instrumentSelectRow.style.visibility = (pattern == null) ? "hidden" : "";
