@@ -1839,6 +1839,7 @@ var beepbox;
                     var instrument = this.channels[channel].instruments[i];
                     if (isDrum) {
                         instrumentArray.push({
+				type: Config.instrumentTypeNames[2],
                             volume: (5 - instrument.volume) * 20,
 							imute: Config.imuteNames[instrument.imute],
                             wave: Config.drumNames[instrument.wave],
