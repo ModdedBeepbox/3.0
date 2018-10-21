@@ -1061,7 +1061,6 @@ var beepbox;
             buffer.push(122, base64IntToCharCode[this.theme]);
 			buffer.push(115, base64IntToCharCode[this.scale]);
 			buffer.push(117, base64IntToCharCode[this.mix]);
-			buffer.push(117, base64IntToCharCode[this.pmix]);
 			buffer.push(124, base64IntToCharCode[this.sampleRate]);
             buffer.push(107, base64IntToCharCode[this.key]);
             buffer.push(108, base64IntToCharCode[this.loopStart >> 6], base64IntToCharCode[this.loopStart & 0x3f]);
