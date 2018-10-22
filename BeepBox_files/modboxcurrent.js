@@ -32,7 +32,7 @@ var beepbox;
             array[i] *= factor;
         }
     }
-    beepbox.scaleElementsByFactor = scaleElementsByFactor;
+    beepbox.scaleElementsByFactor = scaleElementsByFactor; 
     function isPowerOf2(n) {
         return !!n && !(n & (n - 1));
     }
